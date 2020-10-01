@@ -23,7 +23,7 @@ return [
     // Name of the certificate PEM file
     'certname' => 'cert.pem',
     // Name of the certificate key PEM file
-    'keyname' => 'key.pem',
+    'keyname' => 'privkey.pem',
     // Encrypt requests and reponses
     'encrypt_assertion' => true,
     // Make sure messages are signed
