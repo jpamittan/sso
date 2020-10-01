@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Listeners\SamlAssertionAttributes;
+use CodeGreenCreative\SamlIdp\Events\Assertion;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -18,11 +20,8 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        'App\Events\Event' => [
-            'App\Listeners\EventListener',
-        ],
-        'CodeGreenCreative\SamlIdp\Events\Assertion' => [
-            'App\Listeners\SamlAssertionAttributes'
+        Assertion::class => [   
+            SamlAssertionAttributes::class
         ],
     ];
 
